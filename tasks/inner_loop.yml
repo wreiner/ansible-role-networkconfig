@@ -1,0 +1,6 @@
+---
+- name: "Deploy config file"
+  template:
+    src: "empty-file.j2"
+    dest: "{{ item.filepath }}"
+  notify: "Reboot host"

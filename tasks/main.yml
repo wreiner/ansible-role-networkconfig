@@ -1,0 +1,9 @@
+---
+- name: "Deploy multiple files"
+  include_tasks: "inner_loop.yml"
+  loop: "{{ networkconfig__configs }}"
+
+- name: "Install bridge-utils package"
+  package:
+    name: "bridge-utils"
+    state: present
